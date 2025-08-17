@@ -1,7 +1,7 @@
 Package: drrglm
 Title: Doubly Regularized Regression for Matrix-Variate Generalized Linear Models
-Version: 0.1.0
-Date: 2025-07-29
+Version: 0.1.1
+Date: 2025-08-17
 Authors@R: 
     c(person("Zengchao", "Xu", email="zengc.xu@aliyun.com", role = c("aut", "cre")),
     person("Shan", "Luo", role="aut"),
