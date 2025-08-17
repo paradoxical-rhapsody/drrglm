@@ -3,7 +3,6 @@
 export(drrglm)
 export(get_gr_rank)
 export(nrrglm)
-import(mathjaxr)
 importFrom(Rcpp,sourceCpp)
 importFrom(stats,coef)
 importFrom(stats,deviance)

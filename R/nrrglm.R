@@ -1,18 +1,18 @@
 #' @name nrr
 #' @title Nuclear-Norm Regularized Matrix-Variate GLMs
-#' @description \loadmathjax
+#' @description 
 #' Solve the following problem
-#' \mjsdeqn{
+#' \deqn{
 #'  \min_{L} \Big\lbrace 
 #'      \frac{1}{2N} \sum_{n=1}^N \ell(y_n, X_n) + \lambda \|L\|_* 
 #'  \Big\rbrace.
 #' }
 #' 
-#' @param x \mjseqn{p_1 \times p_2 \times N} numeric array with **mean zero**.
-#' @param y Numeric vector of length \mjseqn{N}.
+#' @param x \eqn{p_1 \times p_2 \times N} numeric array with **mean zero**.
+#' @param y Numeric vector of length \eqn{N}.
 #' @param family See [glm] and [family].
-#' @param lambda \mjseqn{\lambda}.
-#' @param L0 Initialization to \mjseqn{L}.
+#' @param lambda \eqn{\lambda}.
+#' @param L0 Initialization to \eqn{L}.
 #' @param tol Convergence tolerance.
 #' @param maxIter Maximal step of iterations.
 #' @param verbose Print iterations?

@@ -1,29 +1,29 @@
 #' @name drr
 #' @title Doubly Regularized Matrix-Variate GLMs
-#' @description \loadmathjax
+#' @description 
 #' Solve the following problem
-#' \mjsdeqn{
+#' \deqn{
 #'   \min_{L, S} \Big\lbrace \frac{1}{N} 
 #'      \sum_{n=1}^N \ell(y_n, X_n) + \lambda_1 \|L\|_* + \lambda_2 \|S\|_1 
 #'   \Big\rbrace,
 #' }
-#' where \mjseqn{\ell(y_n, X_n)} refers to the negative-log-likelihood on
-#' \mjseqn{(y_n, X_n)} under pre-specified GLM. 
+#' where \eqn{\ell(y_n, X_n)} refers to the negative-log-likelihood on
+#' \eqn{(y_n, X_n)} under pre-specified GLM. 
 #' 
 #' In linear model, the problem has the form
-#' \mjsdeqn{
+#' \deqn{
 #'      \min_{L, S} \Big\lbrace \frac{1}{2N} \sum_{n=1}^N 
 #'          \big( y_n - \text{tr}(X_n'C) \big)^2 + 
 #'          \lambda_1 \|L\|_* + \lambda_2 \|S\|_1 \Big\rbrace,
 #'      ~~\text{s.t.}~~ C=L+S.
 #' }
 #' 
-#' @param x \mjseqn{p_1 \times p_2 \times N} numeric array with **mean zero**.
-#' @param y Numeric vector of length \mjseqn{N}.
+#' @param x \eqn{p_1 \times p_2 \times N} numeric array with **mean zero**.
+#' @param y Numeric vector of length \eqn{N}.
 #' @param family See [glm] and [family].
-#' @param lambda1 \mjseqn{\lambda_1}.
-#' @param lambda2 \mjseqn{\lambda_2}.
-#' @param C0 Initialization to \mjseqn{C}.
+#' @param lambda1 \eqn{\lambda_1}.
+#' @param lambda2 \eqn{\lambda_2}.
+#' @param C0 Initialization to \eqn{C}.
 #' @param tol Convergence tolerance.
 #' @param maxIter Maximal step of iterations.
 #' @param verbose Print iterations?

@@ -18,17 +18,17 @@ drrglm(
 )
 }
 \arguments{
-\item{x}{\mjseqn{p_1 \times p_2 \times N} numeric array with \strong{mean zero}.}
+\item{x}{\eqn{p_1 \times p_2 \times N} numeric array with \strong{mean zero}.}
 
-\item{y}{Numeric vector of length \mjseqn{N}.}
+\item{y}{Numeric vector of length \eqn{N}.}
 
 \item{family}{See \link{glm} and \link{family}.}
 
-\item{lambda1}{\mjseqn{\lambda_1}.}
+\item{lambda1}{\eqn{\lambda_1}.}
 
-\item{lambda2}{\mjseqn{\lambda_2}.}
+\item{lambda2}{\eqn{\lambda_2}.}
 
-\item{C0}{Initialization to \mjseqn{C}.}
+\item{C0}{Initialization to \eqn{C}.}
 
 \item{tol}{Convergence tolerance.}
 
@@ -40,18 +40,17 @@ drrglm(
 \code{list(L, S, Lsv, intercept, iter,  lambda1, lambda2, isConvergent, deltaval)}.
 }
 \description{
-\loadmathjax
 Solve the following problem
-\mjsdeqn{
+\deqn{
   \min_{L, S} \Big\lbrace \frac{1}{N} 
      \sum_{n=1}^N \ell(y_n, X_n) + \lambda_1 \|L\|_* + \lambda_2 \|S\|_1 
   \Big\rbrace,
 }
-where \mjseqn{\ell(y_n, X_n)} refers to the negative-log-likelihood on
-\mjseqn{(y_n, X_n)} under pre-specified GLM.
+where \eqn{\ell(y_n, X_n)} refers to the negative-log-likelihood on
+\eqn{(y_n, X_n)} under pre-specified GLM.
 
 In linear model, the problem has the form
-\mjsdeqn{
+\deqn{
      \min_{L, S} \Big\lbrace \frac{1}{2N} \sum_{n=1}^N 
          \big( y_n - \text{tr}(X_n'C) \big)^2 + 
          \lambda_1 \|L\|_* + \lambda_2 \|S\|_1 \Big\rbrace,

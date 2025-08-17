@@ -17,15 +17,15 @@ nrrglm(
 )
 }
 \arguments{
-\item{x}{\mjseqn{p_1 \times p_2 \times N} numeric array with \strong{mean zero}.}
+\item{x}{\eqn{p_1 \times p_2 \times N} numeric array with \strong{mean zero}.}
 
-\item{y}{Numeric vector of length \mjseqn{N}.}
+\item{y}{Numeric vector of length \eqn{N}.}
 
 \item{family}{See \link{glm} and \link{family}.}
 
-\item{lambda}{\mjseqn{\lambda}.}
+\item{lambda}{\eqn{\lambda}.}
 
-\item{L0}{Initialization to \mjseqn{L}.}
+\item{L0}{Initialization to \eqn{L}.}
 
 \item{tol}{Convergence tolerance.}
 
@@ -37,9 +37,8 @@ nrrglm(
 \code{list(L, Lsv, intercept, iter, isConvergent, lambda, deltaval)}.
 }
 \description{
-\loadmathjax
 Solve the following problem
-\mjsdeqn{
+\deqn{
  \min_{L} \Big\lbrace 
      \frac{1}{2N} \sum_{n=1}^N \ell(y_n, X_n) + \lambda \|L\|_* 
  \Big\rbrace.

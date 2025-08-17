@@ -15,9 +15,8 @@ get_gr_rank(sv, tol = 1e-04)
 An integer of rank.
 }
 \description{
-\loadmathjax
-Let \mjseqn{V(k) = \sum_{j=k+1}^r \sigma_j (\hat{L})},
-\mjsdeqn{GR(k) = \frac{
+Let \eqn{V(k) = \sum_{j=k+1}^r \sigma_j (\hat{L})},
+\deqn{GR(k) = \frac{
      \log(1 + \sigma_k(\hat{L}) / V(k))}{
      \log(1 + \sigma_{k+1}(\hat{L})/V(k+1))}
 }

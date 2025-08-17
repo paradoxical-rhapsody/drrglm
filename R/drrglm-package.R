@@ -2,7 +2,6 @@
 "_PACKAGE"
 
 ## usethis namespace: start
-#' @import mathjaxr
 #' @importFrom stats glm logLik deviance coef formula na.omit offset
 #' 
 #' @importFrom Rcpp sourceCpp

@@ -14,7 +14,7 @@ Description:
     lasso norm.
     See the paper by Xu, Luo and Jiang (2025, <doi:10.tbd>).
 Depends: R (>= 2.5.0)
-Imports: Rcpp, stats, mathjaxr
+Imports: Rcpp, stats
 LinkingTo: Rcpp, RcppArmadillo
 URL: https://github.com/paradoxical-rhapsody/drrglm
 BugReports: https://github.com/paradoxical-rhapsody/drrglm/issues
@@ -22,4 +22,3 @@ License: AGPL-3
 Encoding: UTF-8
 Roxygen: list(load="source", markdown = TRUE)
 RoxygenNote: 7.3.2
-RdMacros: mathjaxr
