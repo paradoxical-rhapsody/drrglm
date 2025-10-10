@@ -11,6 +11,22 @@ Rcpp::Rostream<true>&  Rcpp::Rcout = Rcpp::Rcpp_cout_get();
 Rcpp::Rostream<false>& Rcpp::Rcerr = Rcpp::Rcpp_cerr_get();
 #endif
 
+// cxx_solve_huber_nuclear
+List cxx_solve_huber_nuclear(arma::mat Z, double t, double lambda, double tol, int maxIter, bool verbose);
+RcppExport SEXP _drrglm_cxx_solve_huber_nuclear(SEXP ZSEXP, SEXP tSEXP, SEXP lambdaSEXP, SEXP tolSEXP, SEXP maxIterSEXP, SEXP verboseSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< arma::mat >::type Z(ZSEXP);
+    Rcpp::traits::input_parameter< double >::type t(tSEXP);
+    Rcpp::traits::input_parameter< double >::type lambda(lambdaSEXP);
+    Rcpp::traits::input_parameter< double >::type tol(tolSEXP);
+    Rcpp::traits::input_parameter< int >::type maxIter(maxIterSEXP);
+    Rcpp::traits::input_parameter< bool >::type verbose(verboseSEXP);
+    rcpp_result_gen = Rcpp::wrap(cxx_solve_huber_nuclear(Z, t, lambda, tol, maxIter, verbose));
+    return rcpp_result_gen;
+END_RCPP
+}
 // cxx_solve_prox
 List cxx_solve_prox(arma::mat Z, double lambda1, double lambda2, double tol, int maxIter);
 RcppExport SEXP _drrglm_cxx_solve_prox(SEXP ZSEXP, SEXP lambda1SEXP, SEXP lambda2SEXP, SEXP tolSEXP, SEXP maxIterSEXP) {
@@ -28,6 +44,7 @@ END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
+    {"_drrglm_cxx_solve_huber_nuclear", (DL_FUNC) &_drrglm_cxx_solve_huber_nuclear, 6},
     {"_drrglm_cxx_solve_prox", (DL_FUNC) &_drrglm_cxx_solve_prox, 5},
     {NULL, NULL, 0}
 };

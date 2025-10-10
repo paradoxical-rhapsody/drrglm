@@ -28,8 +28,7 @@
 #' @param maxIter Maximal step of iterations.
 #' @param verbose Print iterations?
 #' 
-#' @return `list(L, S, Lsv, intercept, iter, 
-#'              lambda1, lambda2, isConvergent, deltaval)`.
+#' @return `list(L, S, Lsv, iter, lambda1, lambda2, isConvergent)`.
 #' 
 #' @examples 
 #' set.seed(2025)
@@ -67,8 +66,6 @@ drrglm <- function(x, y, family, lambda1, lambda2,
 		stop("'family' not recognized")
 	}
 
-    # fml <- formula(y ~ 0)
-    # if (intercept) fml <- formula(y ~ 1)
     loss <- function(C) {
         eta <- apply(x, 3, function(xn) sum(C * xn))
         # -1.0/N * logLik(glm(y ~ 0, family=family, offset=eta))
@@ -99,11 +96,9 @@ drrglm <- function(x, y, family, lambda1, lambda2,
         showiter(verbose)
         iter[k] <- obj
 
-        ## --- SEARCH POINT ---
         W <- C + (alpha0-1.0)/alpha * (C - C0)
         deltaval <- delta.factor
 
-        ## --- APPROXIMATE SOLUTION ---
         C0 <- C
         obj0 <- obj
         W.go <- grad(W) / deltaval
@@ -116,7 +111,6 @@ drrglm <- function(x, y, family, lambda1, lambda2,
         stopifnot( length(obj) == 1 )
         stopifnot( is.numeric(obj) )
 
-        ## --- FORCE DESCENT ---
         if (obj > obj0) {
             C <- C0
             obj <- obj0
@@ -124,37 +118,23 @@ drrglm <- function(x, y, family, lambda1, lambda2,
             next
         }
 
-        ## --- CHECK CONVERGENCE ---
         if ( abs(obj-obj0) <= (abs(obj0) + 0.1)*tol ) {
             isConvergent <- TRUE
             break
         }
 
-        ## --- UPDATE PARAs ---
         alpha0 <- alpha
         alpha <- (1.0 + sqrt(1.0 + 4*alpha0^2)) / 2.0
-        # delta.factor <- 1.0
     }
-
-
-    # coef.intercept <- 0.0
-    # if (intercept) {
-    #     C <- tmp[["L"]] + tmp[["S"]]
-    #     eta <- apply(x, 3, function(xn) sum(C * xn))
-    #     coef.intercept <- coef(glm(fml, family=family, offset=offset))
-    # }
-    # stopifnot( length(coef.intercept) == 1 )
 
     egg <- list(
         L = tmp[["L"]], 
         S = tmp[["S"]],
         Lsv = tmp[["Lsv"]],
-        # intercept = coef.intercept,
         iter = c(na.omit(iter)),
         lambda1 = lambda1,
         lambda2 = lambda2,
-        isConvergent = isConvergent,
-        deltaval = deltaval
+        isConvergent = isConvergent
     )
     class(egg) <- "drrglm"
 

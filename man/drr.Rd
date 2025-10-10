@@ -37,7 +37,7 @@ drrglm(
 \item{verbose}{Print iterations?}
 }
 \value{
-\code{list(L, S, Lsv, intercept, iter,  lambda1, lambda2, isConvergent, deltaval)}.
+\code{list(L, S, Lsv, iter, lambda1, lambda2, isConvergent)}.
 }
 \description{
 Solve the following problem

@@ -19,7 +19,7 @@
 
 #' ( egg <- get_gr_rank(sv) )
 #' 
-#' @export
+#' @noRd
 get_gr_rank <- function(sv, tol=1e-4){
     stopifnot( all(sv >= 0) )
 

@@ -32,7 +32,7 @@
 #' 
 #' system.time( result <- nrrglm(x, y, family, lambda, verbose=TRUE) )
 #' 
-#' @export 
+#' @noRd 
 nrrglm <- function(x, y, family, lambda, 
                 L0=NULL, tol=1e-3, maxIter=500, verbose=FALSE){
     stopifnot( length(dim(x)) == 3 )

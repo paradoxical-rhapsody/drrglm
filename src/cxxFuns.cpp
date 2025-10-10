@@ -79,7 +79,7 @@ List cxx_soft_svd(arma::mat X, double t) {
 
 
 
-
+// [[Rcpp::export]]
 List cxx_solve_huber_nuclear(
                 arma::mat Z, 
                 double t, 
