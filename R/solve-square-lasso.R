@@ -2,7 +2,7 @@
 #' @description
 #' \deqn{
 #'  \begin{align*}
-#'     \hat{S} 
+#'     \hat{S}
 #'       &= \arg \min_{S} \Big\lbrace \frac{1}{2} \| Z - S \|_F^2 + \lambda \| S \|_1 \Big\rbrace \\\\\\
 #'       &= \Big[ \text{sign}(Z_{ij}) \max\big( |Z_{ij}| - \lambda, 0 \big) \Big].
 #'  \end{align*}
@@ -10,11 +10,14 @@
 #' 
 #' @param Z Numeric matrix.
 #' @param lambda Tuning parameter \eqn{\lambda}.
-#' @param S.diag.penalize See [solve_square_drr].
+#' @param S.diag.penalize Whether to penalize the diagonal elements of `S`.
+#'  `S.diag.penalize=FALSE` is used in factor model
+#'  (See [tune_drr_factor_model], default `TRUE`).
+
 #' 
 #' @return Matrix `S`.
 #' 
-#' @examples 
+#' @examples
 #' set.seed(2023)
 #' r0 <- 7
 #' c0 <- 5
@@ -24,7 +27,7 @@
 #' 
 #' system.time( S <- solve_square_lasso(Z, lambda, S.diag.penalize) )
 #' 
-#' @noRd 
+#' @noRd
 solve_square_lasso <- function(Z, lambda, S.diag.penalize){
     stopifnot( length(lambda) == 1 )
     stopifnot( lambda > 0 )

@@ -1,8 +1,8 @@
 #' @name simu-factor-model
 #' @title Simulation: Factor Model with Correlated Noise
 #' 
-#' @description 
-#' \eqn{y = B u + w} with \eqn{u \sim N(0, I_{r})}, 
+#' @description
+#' \eqn{y = B u + w} with \eqn{u \sim N(0, I_{r})},
 #' \eqn{w \sim N(0, S)} and \eqn{B \in \mathbb{R}^{p \times r}}.
 #' 
 #' \itemize{
@@ -23,14 +23,14 @@
 #' @param B Matrix \eqn{p \times r}.
 #' @param S Symmetric matrix \eqn{p \times p}.
 #' 
-#' @return 
+#' @return
 #' \itemize{
 #'  \item `simu_factor_model_paras`: `list(B, S)`.
 #'  \item `simu_factor_model_data`: Numeric matrix `y` of \eqn{N \times p}.
 #' }
 #' 
 #' 
-#' @examples 
+#' @examples
 #' set.seed(2025)
 #' N <- 50
 #' p <- 15
@@ -48,7 +48,7 @@ NULL
 
 #' @rdname simu-factor-model
 #' @order 1
-#' @export 
+#' @export
 simu_factor_model_paras <- function(p, r, noise){
     stopifnot( p > r )
     stopifnot( noise %in% c('diag', 'rand', 'tridiag', 'block') )

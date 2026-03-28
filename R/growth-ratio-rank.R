@@ -1,6 +1,6 @@
 #' @title Identify Rank using Growth-Ratio Criterion
-#' @description 
-#' Let \eqn{V(k) = \sum_{j=k+1}^r \sigma_j (\hat{L})}, 
+#' @description
+#' Let \eqn{V(k) = \sum_{j=k+1}^r \sigma_j (\hat{L})},
 #' \deqn{GR(k) = \frac{
 #'      \log(1 + \sigma_k(\hat{L}) / V(k))}{
 #'      \log(1 + \sigma_{k+1}(\hat{L})/V(k+1))}
@@ -11,7 +11,7 @@
 #' 
 #' @return An integer of rank.
 #' 
-#' @examples 
+#' @examples
 #' set.seed(2025)
 #' A1 <- matrix(rnorm(10*3), 10)
 #' A2 <- matrix(rnorm(12*3), 12)

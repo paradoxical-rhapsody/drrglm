@@ -2,23 +2,35 @@
 #' 
 #' @description This data arises from a large study to examine EEG
 #' correlates of genetic predisposition to alcoholism.
-#' See <http://kdd.ics.uci.edu/databases/eeg/> for details.
+#' See details.
 #' 
 #' @format `list(alcholic, control)`.
 #' 
-#' @details There were two groups of subjects: 77 alcoholic and 45
-#' control. In the original data, each subject was exposed to either 
-#' a single stimulus (S1) or to two stimuli (S1 and S2) which were 
-#' pictures of objects chosen from the 1980 Snodgrass and Vanderwart 
-#' picture set. 
-#' Under each condition, each subject was observed repeatly for 120 trials.
+#' @details
+#' The original data are fully open-access and available in UCI Machine
+#' Learning Repository (<http://kdd.ics.uci.edu/databases/eeg/>).
+#' It includes two groups of subjects: 77 alcoholic and 45 control.
+#' In the original study, each subject was exposed to either a single
+#' stimulus (S1) or two stimuli (S1 and S2), which were pictures chosen from
+#' the 1980 Snodgrass and Vanderwart picture set.
+#' Each subject underwent 120 trials under each condition.
 #' 
-#' Here, this dataset include the averages of 120 trials under S1. 
-#' It is a list including two arrays,
+#' Here we provide this preprocessed data of the averages of 120 trials under
+#' S1 condition, which has been studied in several literature.
+#' The dataset is structured as a list containing two arrays,
 #' \itemize{
-#'      \item `alcholic`: Array of `256 x 64 x 77`.
-#'      \item `control`:  Array of `256 x 64 x 45`.
+#'  \item `EEG$alcholic`: Array of dimensions `256 x 64 x 77`.
+#'  \item `EEG$control`:  Array of dimensions `256 x 64 x 45`.
 #' }
+#' 
+#' @references
+#' If you use this dataset, we would be very grateful if you could cite both
+#' the original data source and our work:
+#' 
+#' Xu Zengchao, Luo Shan, and Jiang Binyan. Doubly Regularized Matrix-Variate Regression. Submitted.
+#' 
+#' @examples
+#' data(EEG, package="drrglm")
 #' 
 "EEG"
 #> [1] "EEG"

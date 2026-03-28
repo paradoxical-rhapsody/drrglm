@@ -1,10 +1,9 @@
 #' @title Simulating Data for Factor Model with Correlated Noise
-#' @description DRR for factor model.
+#' @description Doubly regularized decomposition for covariance matrix in factor model.
 #' 
 #' @param y Numeric matrix of \eqn{N \times p}.
-#' @param lambda1.factor Factor on \eqn{\lambda_1^8}
-#'  (By default `1.1^(-2:2)`).
-#' @param S.diag.penalize Whether to penalize the diagonal elements of `S` (default `FALSE`).
+#' @param lambda1.factor Factor on \eqn{\lambda_1^8} (by default `1.1^(-2:2)`).
+#' @param S.diag.penalize Whether to penalize the diagonal elements of `S` (by default `FALSE`).
 #' @param tol Convergence tolerance.
 #' @param maxIter Maximal step of iterations.
 #' 
@@ -67,7 +66,7 @@ tune_drr_factor_model <- function(y, lambda1.factor=1.1^(-2:2), S.diag.penalize=
         stopifnot( isSymmetric(Ltmp) )
         stopifnot( identical(dim(Z), dim(Ltmp)) )
 
-        # `lambda2Set` does not contain the diagonal entries in `Z-Ltmp`
+        # `lambda2Set` does not contain the diagonal entries in `Z - Ltmp`
         lambda2Set <- sort(abs( (Z - Ltmp)[upper.tri(Z)] ), decreasing=TRUE)[1:maxCard]
         
         for (lambda2 in lambda2Set) {

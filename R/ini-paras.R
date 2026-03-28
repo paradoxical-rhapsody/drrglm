@@ -20,10 +20,8 @@
 #'  L0.star
 #' )`
 #' 
-#' 
 #' @export
-ini_paras <- function(x, y, family, 
-                    maxRank=min(floor(NROW(x)/2), floor(NCOL(x)/2)), 
+ini_paras <- function(x, y, family, maxRank=min(floor(NROW(x)/2), floor(NCOL(x)/2)),
                     tol=1e-3, verbose=FALSE){
     stopifnot( length(dim(x)) == 3 )
     stopifnot( length(y) == dim(x)[3] )

@@ -1,19 +1,18 @@
 #' @name drr
 #' @title Doubly Regularized Matrix-Variate GLMs
-#' @description 
+#' @description
 #' Solve the following problem
 #' \deqn{
-#'   \min_{L, S} \Big\lbrace \frac{1}{N} 
-#'      \sum_{n=1}^N \ell(y_n, X_n) + \lambda_1 \|L\|_* + \lambda_2 \|S\|_1 
+#'   \min_{L, S} \Big\lbrace \frac{1}{N}
+#'      \sum_{n=1}^N \ell(y_n, X_n) + \lambda_1 \|L\|_* + \lambda_2 \|S\|_1
 #'   \Big\rbrace,
 #' }
-#' where \eqn{\ell(y_n, X_n)} refers to the negative-log-likelihood on
-#' \eqn{(y_n, X_n)} under pre-specified GLM. 
+#' where \eqn{\ell(y_n, X_n)} refers to the negative-log-likelihood on \eqn{(y_n, X_n)} under pre-specified GLM.
 #' 
 #' In linear model, the problem has the form
 #' \deqn{
-#'      \min_{L, S} \Big\lbrace \frac{1}{2N} \sum_{n=1}^N 
-#'          \big( y_n - \text{tr}(X_n'C) \big)^2 + 
+#'      \min_{L, S} \Big\lbrace \frac{1}{2N} \sum_{n=1}^N
+#'          \big( y_n - \text{tr}(X_n'C) \big)^2 +
 #'          \lambda_1 \|L\|_* + \lambda_2 \|S\|_1 \Big\rbrace,
 #'      ~~\text{s.t.}~~ C=L+S.
 #' }
@@ -30,7 +29,7 @@
 #' 
 #' @return `list(L, S, Lsv, iter, lambda1, lambda2, isConvergent)`.
 #' 
-#' @examples 
+#' @examples
 #' set.seed(2025)
 #' r0 <- 13
 #' c0 <- 17
@@ -44,8 +43,8 @@
 #' 
 #' system.time( egg <- drrglm(x, y, family, lambda1, lambda2, verbose=TRUE) )
 #' 
-#' @export 
-drrglm <- function(x, y, family, lambda1, lambda2, 
+#' @export
+drrglm <- function(x, y, family, lambda1, lambda2,
                 C0=NULL, tol=1e-3, maxIter=300, verbose=FALSE){
     stopifnot( length(dim(x)) == 3 )
     stopifnot( length(y) == dim(x)[3] )
@@ -104,7 +103,7 @@ drrglm <- function(x, y, family, lambda1, lambda2,
         W.go <- grad(W) / deltaval
         if ( max(abs(W.go)) < min(1.0e-8, 0.1*tol) ) break
 
-        tmp <- cxx_solve_prox(W - W.go, lambda1/deltaval, lambda2/deltaval, 
+        tmp <- cxx_solve_prox(W - W.go, lambda1/deltaval, lambda2/deltaval,
                             tol=0.5*tol, maxIter=1.5*maxIter)
         C <- tmp[["L"]] + tmp[["S"]]
         obj <- loss(C) + lambda1*sum(tmp[["Lsv"]]) + lambda2*sum(abs(tmp[["S"]]))
@@ -128,7 +127,7 @@ drrglm <- function(x, y, family, lambda1, lambda2,
     }
 
     egg <- list(
-        L = tmp[["L"]], 
+        L = tmp[["L"]],
         S = tmp[["S"]],
         Lsv = tmp[["Lsv"]],
         iter = c(na.omit(iter)),

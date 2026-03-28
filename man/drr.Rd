@@ -42,17 +42,16 @@ drrglm(
 \description{
 Solve the following problem
 \deqn{
-  \min_{L, S} \Big\lbrace \frac{1}{N} 
-     \sum_{n=1}^N \ell(y_n, X_n) + \lambda_1 \|L\|_* + \lambda_2 \|S\|_1 
+  \min_{L, S} \Big\lbrace \frac{1}{N}
+     \sum_{n=1}^N \ell(y_n, X_n) + \lambda_1 \|L\|_* + \lambda_2 \|S\|_1
   \Big\rbrace,
 }
-where \eqn{\ell(y_n, X_n)} refers to the negative-log-likelihood on
-\eqn{(y_n, X_n)} under pre-specified GLM.
+where \eqn{\ell(y_n, X_n)} refers to the negative-log-likelihood on \eqn{(y_n, X_n)} under pre-specified GLM.
 
 In linear model, the problem has the form
 \deqn{
-     \min_{L, S} \Big\lbrace \frac{1}{2N} \sum_{n=1}^N 
-         \big( y_n - \text{tr}(X_n'C) \big)^2 + 
+     \min_{L, S} \Big\lbrace \frac{1}{2N} \sum_{n=1}^N
+         \big( y_n - \text{tr}(X_n'C) \big)^2 +
          \lambda_1 \|L\|_* + \lambda_2 \|S\|_1 \Big\rbrace,
      ~~\text{s.t.}~~ C=L+S.
 }

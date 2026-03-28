@@ -1,18 +1,15 @@
 Package: drrglm
-Title: Doubly Regularized Regression for Matrix-Variate Generalized Linear Models
-Version: 0.2.0
-Date: 2025-10-10
-Authors@R: 
+Title: Doubly Regularized Matrix-Variate Regression
+Version: 0.3.0
+Authors@R:
     c(person("Zengchao", "Xu", email="zengc.xu@aliyun.com", role = c("aut", "cre")),
     person("Shan", "Luo", role="aut"),
     person("Binyan", "Jiang", role="aut"))
 Maintainer: Zengchao Xu <zengc.xu@aliyun.com>
-Description: 
-    The doubly regularized regression for matrix-variate data solves
-    a low-rank-plus-sparse structure for matrix-variate generalized 
-    linear models through a weighted penalty of nuclear-norm and 
-    L1-norm.
-    See the paper by Xu, Luo and Jiang (2025, <doi:10.tbd>).
+Description:
+    The doubly regularized matrix-variate regression solves a low-rank-plus-sparse
+    structure for matrix-variate generalized linear models through a weighted
+    combination of nuclear-norm and L1-norm.
 Depends: R (>= 4.3.0)
 Imports: data.table, glmnet, Rcpp, stats
 LinkingTo: Rcpp, RcppArmadillo
@@ -21,6 +18,6 @@ BugReports: https://github.com/paradoxical-rhapsody/drrglm/issues
 License: AGPL-3
 Encoding: UTF-8
 Roxygen: list(load="source", markdown = TRUE)
-RoxygenNote: 7.3.2
+RoxygenNote: 7.3.3
 LazyData: true
 LazyDataCompression: xz

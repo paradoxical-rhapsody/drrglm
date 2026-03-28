@@ -15,10 +15,9 @@ tune_drr_factor_model(
 \arguments{
 \item{y}{Numeric matrix of \eqn{N \times p}.}
 
-\item{lambda1.factor}{Factor on \eqn{\lambda_1^8}
-(By default \code{1.1^(-2:2)}).}
+\item{lambda1.factor}{Factor on \eqn{\lambda_1^8} (by default \code{1.1^(-2:2)}).}
 
-\item{S.diag.penalize}{Whether to penalize the diagonal elements of \code{S} (default \code{FALSE}).}
+\item{S.diag.penalize}{Whether to penalize the diagonal elements of \code{S} (by default \code{FALSE}).}
 
 \item{tol}{Convergence tolerance.}
 
@@ -28,7 +27,7 @@ tune_drr_factor_model(
 List.
 }
 \description{
-DRR for factor model.
+Doubly regularized decomposition for covariance matrix in factor model.
 }
 \examples{
 set.seed(2025)

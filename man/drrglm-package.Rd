@@ -3,9 +3,9 @@
 \docType{package}
 \name{drrglm-package}
 \alias{drrglm-package}
-\title{drrglm: Doubly Regularized Regression for Matrix-Variate Generalized Linear Models}
+\title{drrglm: Doubly Regularized Matrix-Variate Regression}
 \description{
-The doubly regularized regression for matrix-variate data solves a low-rank-plus-sparse structure for matrix-variate generalized linear models through a weighted penalty of nuclear-norm and L1-norm. See the paper by Xu, Luo and Jiang (2025, \doi{10.tbd}).
+The doubly regularized matrix-variate regression solves a low-rank-plus-sparse structure for matrix-variate generalized linear models through a weighted combination of nuclear-norm and L1-norm.
 }
 \seealso{
 Useful links:

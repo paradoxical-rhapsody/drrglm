@@ -31,7 +31,7 @@ simu_reg_data(family, N, C0, err.student.dof = NULL)
 
 \item{C0}{Coefficient matrix.}
 
-\item{err.student.dof}{The dof of Student-\eqn{t} for error term in
+\item{err.student.dof}{The degree of freedom of Student-\eqn{t} for error term in
 \code{family="gaussian"}. By default it is \code{NULL} for normal error.}
 }
 \value{

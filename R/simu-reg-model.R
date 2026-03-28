@@ -11,19 +11,19 @@
 #' \itemize{
 #'  \item `zero`: Zero matrix.
 #'  \item `rand`: Nonzero elements at random positions.
-#'  \item `block`: Block matrix. 
+#'  \item `block`: Block matrix.
 #'  \item `diag`: Diagonal matrix.
 #' }
-#' @param err.student.dof The dof of Student-\eqn{t} for error term in 
+#' @param err.student.dof The degree of freedom of Student-\eqn{t} for error term in
 #'  `family="gaussian"`. By default it is `NULL` for normal error.
 #' 
-#' @return 
+#' @return
 #' \itemize{
 #'  \item `simu_reg_coefs`: `list(L, S)`.
 #'  \item `simu_reg_data`: `list( train=list(x, y), test=list(x, y) )`.
 #' }
 #' 
-#' @examples 
+#' @examples
 #' p1 <- 10
 #' p2 <- 9
 #' rank0 <- 3
@@ -50,7 +50,7 @@ NULL
 
 #' @rdname simu-reg-model
 #' @order 1
-#' @export 
+#' @export
 simu_reg_coefs <- function(p1, p2, rank0, S.type){
     set.seed(2023)
 
@@ -82,7 +82,7 @@ simu_reg_coefs <- function(p1, p2, rank0, S.type){
 
 #' @rdname simu-reg-model
 #' @order 2
-#' @export 
+#' @export
 simu_reg_data <- function(family, N, C0, err.student.dof=NULL){
     stopifnot( family %in% c('gaussian', 'binomial') )
     rDim <- NROW(C0)
@@ -108,7 +108,7 @@ simu_reg_data <- function(family, N, C0, err.student.dof=NULL){
     }
     
     list(
-        train = set_x_and_y(family, N), 
+        train = set_x_and_y(family, N),
         test  = set_x_and_y(family, 1000)
     )
 }

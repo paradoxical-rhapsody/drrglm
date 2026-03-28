@@ -54,7 +54,7 @@ DT <- simu_reg_data(family, N, C0)
 x <- DT[["train"]][["x"]]
 y <- DT[["train"]][["y"]]
 
-lambda1.factor <- lambda.factor <- 1.1^(0:1)
+lambda1.factor <- 1.1^(0:1)
 maxRank <- 5
 
 system.time( iniParas <- ini_paras(x, y, family, maxRank) )

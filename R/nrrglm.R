@@ -1,10 +1,10 @@
 #' @name nrr
 #' @title Nuclear-Norm Regularized Matrix-Variate GLMs
-#' @description 
+#' @description
 #' Solve the following problem
 #' \deqn{
-#'  \min_{L} \Big\lbrace 
-#'      \frac{1}{2N} \sum_{n=1}^N \ell(y_n, X_n) + \lambda \|L\|_* 
+#'  \min_{L} \Big\lbrace
+#'      \frac{1}{2N} \sum_{n=1}^N \ell(y_n, X_n) + \lambda \|L\|_*
 #'  \Big\rbrace.
 #' }
 #' 
@@ -19,7 +19,7 @@
 #' 
 #' @return `list(L, Lsv, intercept, iter, isConvergent, lambda, deltaval)`.
 #' 
-#' @examples 
+#' @examples
 #' set.seed(2025)
 #' r0 <- 13
 #' c0 <- 17
@@ -32,7 +32,7 @@
 #' 
 #' system.time( result <- nrrglm(x, y, family, lambda, verbose=TRUE) )
 #' 
-#' @noRd 
+#' @noRd
 nrrglm <- function(x, y, family, lambda, 
                 L0=NULL, tol=1e-3, maxIter=500, verbose=FALSE){
     stopifnot( length(dim(x)) == 3 )
