@@ -6,7 +6,7 @@
 \alias{simu-factor-model}
 \title{Simulation: Factor Model with Correlated Noise}
 \usage{
-simu_factor_model_paras(p, r, noise)
+simu_factor_model_paras(p, r, noise, seed = 2023)
 
 simu_factor_model_data(N, B, S)
 }
@@ -22,6 +22,8 @@ simu_factor_model_data(N, B, S)
 \item \code{tridiag}: Tri-diagonal matrix.
 \item \code{block}: Block matrix.
 }}
+
+\item{seed}{Random seed.}
 
 \item{N}{Sample size.}
 

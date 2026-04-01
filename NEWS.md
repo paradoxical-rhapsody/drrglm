@@ -1,3 +1,9 @@
+
+# drrglm 0.3.1
+
+* polish details according to the suggestions by CRAN team member (Konstanze Lauseker).
+
+
 # drrglm 0.3.0
 
 * add simulation setup `simu_zhouandli2016`.

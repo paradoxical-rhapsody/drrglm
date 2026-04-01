@@ -16,6 +16,7 @@
 #' }
 #' @param err.student.dof The degree of freedom of Student-\eqn{t} for error term in
 #'  `family="gaussian"`. By default it is `NULL` for normal error.
+#' @param seed Random seed.
 #' 
 #' @return
 #' \itemize{
@@ -51,8 +52,8 @@ NULL
 #' @rdname simu-reg-model
 #' @order 1
 #' @export
-simu_reg_coefs <- function(p1, p2, rank0, S.type){
-    set.seed(2023)
+simu_reg_coefs <- function(p1, p2, rank0, S.type, seed=2023){
+    if (!is.null(seed)) set.seed(seed)
 
     stopifnot( S.type %in% c("zero", "rand", "block", "diag") )
     stopifnot( rank0 >= 0 && rank0 <= min(p1, p2) )

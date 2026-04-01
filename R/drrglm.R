@@ -41,7 +41,7 @@
 #' lambda1 <- 0.15
 #' lambda2 <- 0.04
 #' 
-#' system.time( egg <- drrglm(x, y, family, lambda1, lambda2, verbose=TRUE) )
+#' system.time( egg <- drrglm(x, y, family, lambda1, lambda2) )
 #' 
 #' @export
 drrglm <- function(x, y, family, lambda1, lambda2,

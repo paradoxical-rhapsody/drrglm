@@ -6,7 +6,7 @@
 \alias{simu-reg-model}
 \title{Simulation: Matrix-Variate GLM}
 \usage{
-simu_reg_coefs(p1, p2, rank0, S.type)
+simu_reg_coefs(p1, p2, rank0, S.type, seed = 2023)
 
 simu_reg_data(family, N, C0, err.student.dof = NULL)
 }
@@ -24,6 +24,8 @@ simu_reg_data(family, N, C0, err.student.dof = NULL)
 \item \code{block}: Block matrix.
 \item \code{diag}: Diagonal matrix.
 }}
+
+\item{seed}{Random seed.}
 
 \item{family}{See \link{glm} and \link{family}.}
 

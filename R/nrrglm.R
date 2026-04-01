@@ -30,7 +30,7 @@
 #' family <- "gaussian"
 #' lambda <- 0.15
 #' 
-#' system.time( result <- nrrglm(x, y, family, lambda, verbose=TRUE) )
+#' system.time( result <- nrrglm(x, y, family, lambda) )
 #' 
 #' @noRd
 nrrglm <- function(x, y, family, lambda, 

@@ -22,6 +22,7 @@
 #' }
 #' @param B Matrix \eqn{p \times r}.
 #' @param S Symmetric matrix \eqn{p \times p}.
+#' @param seed Random seed.
 #' 
 #' @return
 #' \itemize{
@@ -49,11 +50,11 @@ NULL
 #' @rdname simu-factor-model
 #' @order 1
 #' @export
-simu_factor_model_paras <- function(p, r, noise){
+simu_factor_model_paras <- function(p, r, noise, seed=2023){
     stopifnot( p > r )
     stopifnot( noise %in% c('diag', 'rand', 'tridiag', 'block') )
 
-    set.seed(2023)
+    if (!is.null(seed)) set.seed(seed)
 
     tmp <- svd( matrix(rnorm(p*r), p) )
     U <- tmp[["u"]][, 1:r, drop=FALSE]

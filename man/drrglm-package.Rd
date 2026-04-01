@@ -5,7 +5,7 @@
 \alias{drrglm-package}
 \title{drrglm: Doubly Regularized Matrix-Variate Regression}
 \description{
-The doubly regularized matrix-variate regression solves a low-rank-plus-sparse structure for matrix-variate generalized linear models through a weighted combination of nuclear-norm and L1-norm.
+The doubly regularized matrix-variate regression solves a low-rank-plus-sparse structure for matrix-variate generalized linear models through a weighted combination of nuclear-norm and L1-norm. The method is detailed in the manuscript "Doubly Regularized Matrix-Variate Regression", which has been tentatively accepted by the Journal of Computational and Graphical Statistics.
 }
 \seealso{
 Useful links:
@@ -16,7 +16,7 @@ Useful links:
 
 }
 \author{
-\strong{Maintainer}: Zengchao Xu \email{zengc.xu@aliyun.com}
+\strong{Maintainer}: Zengchao Xu \email{zengc.xu@aliyun.com} [copyright holder]
 
 Authors:
 \itemize{
