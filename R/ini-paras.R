@@ -37,7 +37,6 @@ ini_paras <- function(x, y, family, maxRank=min(floor(NROW(x)/2), floor(NCOL(x)/
 	if (is.function(family))
 		family <- family()
 	if (is.null(family$family)) {
-		print(family)
 		stop("'family' not recognized")
 	}
 
@@ -61,7 +60,7 @@ ini_paras <- function(x, y, family, maxRank=min(floor(NROW(x)/2), floor(NCOL(x)/
     ## --- INITIALIZATION ---
     # L0 <- apply(x, 1:2, function(xij) mean(xij*y) / mean(xij^2))
     L0 <- matrix(0.0, NROW(x), NCOL(x))
-    tmp <- nrrglm(x, y, family, 1e-4, L0, 0.1*tol, maxIter, FALSE)
+    tmp <- nrrglm(x, y, family, 1e-4, L0, 0.1*tol, maxIter)
     L0 <- tmp[["L"]]
     stopifnot( dim(L0) == c(NROW(x), NCOL(x)) )
     
@@ -91,14 +90,14 @@ ini_paras <- function(x, y, family, maxRank=min(floor(NROW(x)/2), floor(NCOL(x)/
     k <- 0
     while (TRUE) {
         k <- k + 1
-        tmp <- nrrglm(x, y, family, lambda, L0, tol, maxIter, verbose=FALSE)
+        tmp <- nrrglm(x, y, family, lambda, L0, tol, maxIter)
         L0 <- get("L", tmp)
         stopifnot( dim(L0) == c(NROW(x), NCOL(x)) )
 
         rankL <- sum(abs(tmp[["Lsv"]]) >= valuetol)
         
-        if (verbose) 
-            message(sprintf("%i-th: [%.6f, %.6f], rankL=%i(%i)", k, lambdaLower, lambdaUpper, rankL, rankStar))
+        if (verbose)
+            cat(sprintf("%i-th: [%.6f, %.6f], rankL=%i(%i)", k, lambdaLower, lambdaUpper, rankL, rankStar))
 
         if (rankL == rankStar) break
         

@@ -61,7 +61,6 @@ drrglm <- function(x, y, family, lambda1, lambda2,
 	if (is.function(family))
 		family <- family()
 	if (is.null(family$family)) {
-		print(family)
 		stop("'family' not recognized")
 	}
 
@@ -78,9 +77,6 @@ drrglm <- function(x, y, family, lambda1, lambda2,
         apply( sweep(x, 3, w, "*"), 1:2, mean )
     }
 
-    showiter <- function(verbose)
-        if (verbose) message(sprintf("iter %i: obj=%.4f", k, obj))
-
     if (is.null(C0))
         C0 <- matrix(0.0, NROW(x), NCOL(x))
 
@@ -92,7 +88,9 @@ drrglm <- function(x, y, family, lambda1, lambda2,
     isConvergent <- FALSE
     delta.factor <- 1.0
     for (k in seq_len(maxIter)) {
-        showiter(verbose)
+        if (verbose)
+            cat(sprintf("iter %i: obj=%.4f", k, obj))
+
         iter[k] <- obj
 
         W <- C + (alpha0-1.0)/alpha * (C - C0)
@@ -103,8 +101,7 @@ drrglm <- function(x, y, family, lambda1, lambda2,
         W.go <- grad(W) / deltaval
         if ( max(abs(W.go)) < min(1.0e-8, 0.1*tol) ) break
 
-        tmp <- cxx_solve_prox(W - W.go, lambda1/deltaval, lambda2/deltaval,
-                            tol=0.5*tol, maxIter=1.5*maxIter)
+        tmp <- cxx_solve_prox(W - W.go, lambda1/deltaval, lambda2/deltaval, tol=0.5*tol, maxIter=1.5*maxIter)
         C <- tmp[["L"]] + tmp[["S"]]
         obj <- loss(C) + lambda1*sum(tmp[["Lsv"]]) + lambda2*sum(abs(tmp[["S"]]))
         stopifnot( length(obj) == 1 )

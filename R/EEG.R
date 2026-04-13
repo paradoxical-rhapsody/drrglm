@@ -27,7 +27,7 @@
 #' If you use this dataset, we would be very grateful if you could cite both
 #' the original data source and our work:
 #' 
-#' Xu Zengchao, Luo Shan, and Jiang Binyan. Doubly Regularized Matrix-Variate Regression. Submitted.
+#' Zengchao Xu, Shan Luo, and Binyan Jiang. "Doubly Regularized Matrix-Variate Regression". *Submitted*.
 #' 
 #' @examples
 #' data(EEG, package="drrglm")

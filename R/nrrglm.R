@@ -49,7 +49,6 @@ nrrglm <- function(x, y, family, lambda,
 	if (is.function(family))
 		family <- family()
 	if (is.null(family$family)) {
-		print(family)
 		stop("'family' not recognized")
 	}
 
@@ -68,9 +67,6 @@ nrrglm <- function(x, y, family, lambda,
         apply( sweep(x, 3, w, "*"), 1:2, mean )
     }
 
-    showiter <- function(verbose)
-        if (verbose) message(sprintf("iter %i: obj=%.4f", k, obj))
-
     if (is.null(L0))
         L0 <- matrix(0.0, NROW(x), NCOL(x))
 
@@ -85,7 +81,9 @@ nrrglm <- function(x, y, family, lambda,
     isConvergent <- FALSE
     delta.factor <- 1.0
     for (k in seq_len(maxIter)) {
-        showiter(verbose)
+        if (verbose)
+            cat(sprintf("iter %i: obj=%.4f", k, obj))
+
         iter[k] <- obj
 
         ## --- SEARCH POINT ---

@@ -66,7 +66,7 @@ tune_drrglm <- function(iniParas, x, y, lambda1.factor=1.3^seq(-3, 3, 0.2),
     loss.star <- Inf
     C0 <- L0 <- matrix(0.0, NROW(x), NCOL(x))
     for (lambda1 in lambda1Set) {
-        nrrobj <- nrrglm(x, y, family, lambda1, L0, tol, maxIter=500, FALSE)
+        nrrobj <- nrrglm(x, y, family, lambda1, L0, tol, maxIter=500)
         L0 <- nrrobj[["L"]]
         eta.L0 <- apply(x, 3, function(xn) sum(xn * L0))
         stopifnot( dim(L0) == c(NROW(x), NCOL(x)) )
@@ -83,7 +83,7 @@ tune_drrglm <- function(iniParas, x, y, lambda1.factor=1.3^seq(-3, 3, 0.2),
         lambda2Set <- lambda2Set[seq( min(length(lambda2Set), maxCard) )]
 
         for (lambda2 in lambda2Set) {
-            drrobj <- drrglm(x, y, family, lambda1, lambda2, C0, tol, maxIter, verbose=FALSE)
+            drrobj <- drrglm(x, y, family, lambda1, lambda2, C0, tol, maxIter)
             stopifnot( dim(drrobj$L) == c(NROW(x), NCOL(x)) )
             stopifnot( dim(drrobj$S) == c(NROW(x), NCOL(x)) )
 

@@ -1,6 +1,6 @@
 Package: drrglm
 Title: Doubly Regularized Matrix-Variate Regression
-Version: 0.3.1
+Version: 0.3.2
 Authors@R:
     c(person("Zengchao", "Xu", email="zengc.xu@aliyun.com", role = c("aut", "cre", "cph")),
     person("Shan", "Luo", role="aut"),
@@ -10,8 +10,10 @@ Description:
     The doubly regularized matrix-variate regression solves a low-rank-plus-sparse
     structure for matrix-variate generalized linear models through a weighted
     combination of nuclear-norm and L1-norm.
-    The method is detailed in the manuscript "Doubly Regularized Matrix-Variate Regression",
-    which has been tentatively accepted by the Journal of Computational and Graphical Statistics.
+    The methodology implemented by this package is described in the paper "Doubly
+    Regularized Matrix-Variate Regression", which has been tentatively accepted for
+    publication but does not yet have a DOI or URL. A formal citation will be added
+    in a future update once the final publication details are available.
 Depends: R (>= 4.3.0)
 Imports: data.table, glmnet, Rcpp, stats
 LinkingTo: Rcpp, RcppArmadillo

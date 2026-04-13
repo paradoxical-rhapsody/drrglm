@@ -1,7 +1,12 @@
+# drrglm 0.3.2
+
+* update documentation.
+
+* remove the unnecessary `print` statements.
 
 # drrglm 0.3.1
 
-* polish details according to the suggestions by CRAN team member (Konstanze Lauseker).
+* polish details according to the suggestions by CRAN.
 
 
 # drrglm 0.3.0

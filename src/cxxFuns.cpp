@@ -163,7 +163,7 @@ arma::mat cxx_soft_threshold(arma::mat Z, double lambda){
 List cxx_solve_prox(arma::mat Z, double lambda1, double lambda2, 
     double tol, int maxIter){
 
-    List Ltmp = cxx_solve_huber_nuclear(Z, lambda2, lambda1, tol, maxIter, false) ; 
+    List Ltmp = cxx_solve_huber_nuclear(Z, lambda2, lambda1, tol, maxIter) ; 
     arma::mat S = cxx_soft_threshold(Z - as<arma::mat>(Ltmp["L"]), lambda2);
 
     return List::create(
