@@ -7,20 +7,18 @@ The `drrglm` package implements doubly regularized matrix-variate regression for
 
 ## Installation
 
-<!--
-From CRAN:
-```R
-install.packages("drrglm")
-```
--->
+1. From CRAN:
+    ```R
+    install.packages("drrglm")
+    ```
 
-From github:
-```R
-library(remotes)
-install_github("paradoxical-rhapsody/drrglm")
-```
+2. From github:
+    ```R
+    library(remotes)
+    install_github("paradoxical-rhapsody/drrglm")
+    ```
 
-**Note**: To install it on Windows platform from github, it requires [RTools](https://cran.r-project.org/bin/windows/Rtools/) to compile the source code.
+    **Note**: To install it on Windows platform from github, it requires [RTools](https://cran.r-project.org/bin/windows/Rtools/) to compile the source code.
 
 
 ## Usage
