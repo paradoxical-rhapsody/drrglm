@@ -57,12 +57,12 @@ drrglm <- function(x, y, family, lambda1, lambda2,
     stopifnot( length(x.norm2) == length(y) )
 
     if (is.character(family))
-		family <- get(family, mode = "function", envir = parent.frame())
-	if (is.function(family))
-		family <- family()
-	if (is.null(family$family)) {
-		stop("'family' not recognized")
-	}
+        family <- get(family, mode = "function", envir = parent.frame())
+    if (is.function(family))
+        family <- family()
+    if (is.null(family$family)) {
+        stop("'family' not recognized")
+    }
 
     loss <- function(C) {
         eta <- apply(x, 3, function(xn) sum(C * xn))

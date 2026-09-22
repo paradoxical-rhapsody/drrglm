@@ -5,7 +5,7 @@
 #' @param iniParas Initial values returned by [ini_paras]. See examples below.
 #' @param x Numeric array.
 #' @param y Numeric vector.
-#' @param lambda1.factor Factor on initial guess\eqn{\lambda_1^2}
+#' @param lambda1.factor Factor on initial guess \eqn{\lambda_1^*}
 #'  (By default `1.3^seq(-3, 3, 0.2)`).
 #' @param maxCard The maximal cardinality of \eqn{S}.
 #' @param tol Convergence tolerance.

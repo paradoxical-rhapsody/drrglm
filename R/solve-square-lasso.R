@@ -13,7 +13,6 @@
 #' @param S.diag.penalize Whether to penalize the diagonal elements of `S`.
 #'  `S.diag.penalize=FALSE` is used in factor model
 #'  (See [tune_drr_factor_model], default `TRUE`).
-
 #' 
 #' @return Matrix `S`.
 #' 

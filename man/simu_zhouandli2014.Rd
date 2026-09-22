@@ -17,7 +17,7 @@ simu_zhouandli2014(N, p1, p2, r0, s0, family)
 
 \item{s0}{signal proportion.}
 
-\item{family}{\code{gaussian} or \code{binomial}.}
+\item{family}{\code{"gaussian"} or \code{"binomial"}.}
 }
 \value{
 \code{list( C0, train=list(x, y), test=list(x, y) )}.

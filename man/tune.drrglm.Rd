@@ -22,7 +22,7 @@ tune_drrglm(
 
 \item{y}{Numeric vector.}
 
-\item{lambda1.factor}{Factor on initial guess\eqn{\lambda_1^2}
+\item{lambda1.factor}{Factor on initial guess \eqn{\lambda_1^*}
 (By default \code{1.3^seq(-3, 3, 0.2)}).}
 
 \item{maxCard}{The maximal cardinality of \eqn{S}.}

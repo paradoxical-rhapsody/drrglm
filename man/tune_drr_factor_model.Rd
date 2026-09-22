@@ -15,7 +15,7 @@ tune_drr_factor_model(
 \arguments{
 \item{y}{Numeric matrix of \eqn{N \times p}.}
 
-\item{lambda1.factor}{Factor on \eqn{\lambda_1^8} (by default \code{1.1^(-2:2)}).}
+\item{lambda1.factor}{Factor on \eqn{\lambda_1^*} (by default \code{1.1^(-2:2)}).}
 
 \item{S.diag.penalize}{Whether to penalize the diagonal elements of \code{S} (by default \code{FALSE}).}
 

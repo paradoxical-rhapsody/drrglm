@@ -15,7 +15,7 @@
 #'  \item `diag`: Diagonal matrix.
 #' }
 #' @param err.student.dof The degree of freedom of Student-\eqn{t} for error term in
-#'  `family="gaussian"`. By default it is `NULL` for normal error.
+#'  `family="gaussian"`. By default it is `NULL`, corresponding to normal error.
 #' @param seed Random seed.
 #' 
 #' @return

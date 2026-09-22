@@ -5,7 +5,7 @@
 #' @param p2 Column dimension.
 #' @param r0 Rank.
 #' @param s0 signal proportion.
-#' @param family `gaussian` or `binomial`.
+#' @param family `"gaussian"` or `"binomial"`.
 #' 
 #' @return `list( C0, train=list(x, y), test=list(x, y) )`.
 #' 

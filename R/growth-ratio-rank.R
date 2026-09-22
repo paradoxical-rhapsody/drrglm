@@ -16,7 +16,6 @@
 #' A1 <- matrix(rnorm(10*3), 10)
 #' A2 <- matrix(rnorm(12*3), 12)
 #' sv <- svd(A1 %*% t(A2))$d
-
 #' ( egg <- get_gr_rank(sv) )
 #' 
 #' @noRd

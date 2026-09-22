@@ -2,7 +2,7 @@
 #' @description Doubly regularized decomposition for covariance matrix in factor model.
 #' 
 #' @param y Numeric matrix of \eqn{N \times p}.
-#' @param lambda1.factor Factor on \eqn{\lambda_1^8} (by default `1.1^(-2:2)`).
+#' @param lambda1.factor Factor on \eqn{\lambda_1^*} (by default `1.1^(-2:2)`).
 #' @param S.diag.penalize Whether to penalize the diagonal elements of `S` (by default `FALSE`).
 #' @param tol Convergence tolerance.
 #' @param maxIter Maximal step of iterations.
